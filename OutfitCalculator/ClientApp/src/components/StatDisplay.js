@@ -37,10 +37,12 @@ const StatDisplay = (stats) => {
     return (
         <Table bordered responsive variant="dark">
             <thead>
-                <td>Sexy</td>
-                <td>Beauty</td>
-                <td>Cute</td>
-                <td>Funny</td>
+                <tr>
+                    <td>Sexy</td>
+                    <td>Beauty</td>
+                    <td>Cute</td>
+                    <td>Funny</td>
+                </tr>
             </thead>
             <tbody>
                 <tr>
