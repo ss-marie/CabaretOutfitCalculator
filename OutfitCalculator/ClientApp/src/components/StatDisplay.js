@@ -46,10 +46,10 @@ const StatDisplay = (stats) => {
             </thead>
             <tbody>
                 <tr>
-                    <td><span class={sexyStatClass}>{sexyEmoji}</span></td>
-                    <td><span class={beautyStatClass}>{beautyEmoji}</span></td>
-                    <td><span class={cuteStatClass}>{cuteEmoji}</span></td>
-                    <td><span class={funnyStatClass}>{funnyEmoji}</span></td>
+                    <td><span className={sexyStatClass}>{sexyEmoji}</span></td>
+                    <td><span className={beautyStatClass}>{beautyEmoji}</span></td>
+                    <td><span className={cuteStatClass}>{cuteEmoji}</span></td>
+                    <td><span className={funnyStatClass}>{funnyEmoji}</span></td>
                 </tr>
             </tbody>
         </Table>
