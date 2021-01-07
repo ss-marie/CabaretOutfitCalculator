@@ -1,5 +1,4 @@
-﻿import React, { useState } from 'react';
-import { useEffect } from 'react';
+﻿import React, { useState, useEffect, useCallback } from 'react';
 import { ToggleButtonGroup, ToggleButton, Button } from 'react-bootstrap';
 import StatDisplay from './StatDisplay';
 
@@ -18,9 +17,59 @@ const MakeoverItemButtons = (makeoverItems) => {
     const [perfumeValue, setPerfumeValue] = useState('1');
     const [statsValue, setStatsValue] = useState('1');
 
+    const getSelectedItems = useCallback(() => [
+        hostessValue,
+        dressValue,
+        hairstyleValue,
+        hairAccessoryValue,
+        eyeglassesValue,
+        earringsValue,
+        necklaceValue,
+        nailsValue,
+        ringValue,
+        watchValue,
+        braceletValue,
+        perfumeValue,
+    ], [
+        hostessValue,
+        dressValue,
+        hairstyleValue,
+        hairAccessoryValue,
+        eyeglassesValue,
+        earringsValue,
+        necklaceValue,
+        nailsValue,
+        ringValue,
+        watchValue,
+        braceletValue,
+        perfumeValue
+    ]);
+
     useEffect(() => {
+        async function getStats() {
+            var selectedItems = getSelectedItems();
+            var idList = "";
+            var counter = 0;
+            for (var i = 0; i < selectedItems.length; i++) {
+                var item = JSON.parse(selectedItems[i]);
+                if (item.id) {
+                    if (counter > 0) {
+                        idList += "&";
+                    }
+                    idList += ("itemId=" + item.id);
+                    counter++;
+                }
+            }
+            await fetch(`https://localhost:44330/outfit?${idList}&getBest=false`)
+                .then((response) => response.json())
+                .then(data => {
+                    setStatsValue(data.stats);
+                    return data;
+                });
+        }
         getStats();
     }, [
+        getSelectedItems,
         hostessValue,
         dressValue,
         hairstyleValue,
@@ -100,45 +149,6 @@ const MakeoverItemButtons = (makeoverItems) => {
             default: break;
         }
         return item;
-    }
-
-    function getSelectedItems() {
-        return [
-            hostessValue,
-            dressValue,
-            hairstyleValue,
-            hairAccessoryValue,
-            eyeglassesValue,
-            earringsValue,
-            necklaceValue,
-            nailsValue,
-            ringValue,
-            watchValue,
-            braceletValue,
-            perfumeValue,
-        ]
-    };
-
-    async function getStats() {
-        var selectedItems = getSelectedItems();
-        var idList = "";
-        var counter = 0;
-        for (var i = 0; i < selectedItems.length; i++) {
-            var item = JSON.parse(selectedItems[i]);
-            if (item.id) {
-                if (counter > 0) {
-                    idList += "&";
-                }
-                idList += ("itemId=" + item.id);
-                counter++;
-            }
-        }
-        await fetch(`https://localhost:44330/outfit?${idList}&getBest=false`)
-            .then((response) => response.json())
-            .then(data => {
-                setStatsValue(data.stats);
-                return data;
-            });
     }
 
     async function getBestOutfit() {
