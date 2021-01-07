@@ -26,7 +26,7 @@ body {
     background-color: Maroon;
 }
 
-    .table-dark thead th, .table-dark tbody td {
+    .table-dark thead td, .table-dark tbody td {
         border-color: LightGray;
     }
 

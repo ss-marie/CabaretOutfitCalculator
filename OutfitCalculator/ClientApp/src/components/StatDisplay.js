@@ -37,17 +37,17 @@ const StatDisplay = (stats) => {
     return (
         <Table bordered responsive variant="dark">
             <thead>
-                <th>Sexy</th>
-                <th>Beauty</th>
-                <th>Cute</th>
-                <th>Funny</th>
+                <td>Sexy</td>
+                <td>Beauty</td>
+                <td>Cute</td>
+                <td>Funny</td>
             </thead>
             <tbody>
                 <tr>
-                    <td><div class={sexyStatClass}>{sexyEmoji}</div></td>
-                    <td><div class={beautyStatClass}>{beautyEmoji}</div></td>
-                    <td><div class={cuteStatClass}>{cuteEmoji}</div></td>
-                    <td><div class={funnyStatClass}>{funnyEmoji}</div></td>
+                    <td><span class={sexyStatClass}>{sexyEmoji}</span></td>
+                    <td><span class={beautyStatClass}>{beautyEmoji}</span></td>
+                    <td><span class={cuteStatClass}>{cuteEmoji}</span></td>
+                    <td><span class={funnyStatClass}>{funnyEmoji}</span></td>
                 </tr>
             </tbody>
         </Table>
