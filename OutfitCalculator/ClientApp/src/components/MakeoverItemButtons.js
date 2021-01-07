@@ -21,18 +21,18 @@ const MakeoverItemButtons = (makeoverItems) => {
     useEffect(() => {
         getStats();
     }, [
-            hostessValue,
-            dressValue,
-            hairstyleValue,
-            hairAccessoryValue,
-            eyeglassesValue,
-            earringsValue,
-            necklaceValue,
-            nailsValue,
-            ringValue,
-            watchValue,
-            braceletValue,
-            perfumeValue
+        hostessValue,
+        dressValue,
+        hairstyleValue,
+        hairAccessoryValue,
+        eyeglassesValue,
+        earringsValue,
+        necklaceValue,
+        nailsValue,
+        ringValue,
+        watchValue,
+        braceletValue,
+        perfumeValue
     ]);
 
     const hostess = 0;
@@ -136,7 +136,7 @@ const MakeoverItemButtons = (makeoverItems) => {
             }
         }
         //const response =
-            await fetch(`https://localhost:44330/outfit?${idList}&getBest=false`)
+        await fetch(`https://localhost:44330/outfit?${idList}&getBest=false`)
             .then((response) => response.json())
             .then(data => {
                 setStatsValue(data.stats);
@@ -202,7 +202,7 @@ const MakeoverItemButtons = (makeoverItems) => {
         var filteredItems = makeoverItems.makeoverItems.filter(item => {
             return item.slot === i
         });
-        buttons.push(<div>{makeoverItemTypes[i]}</div>);
+        buttons.push(<h2>{makeoverItemTypes[i]}</h2>);
         buttons.push(
             <ToggleButtonGroup
                 key={i}
@@ -210,6 +210,7 @@ const MakeoverItemButtons = (makeoverItems) => {
                 name={'radio' + i}
                 value={getItem(i)}
                 onChange={setItem}
+                style={{flexWrap: "wrap"}}
             >
                 {filteredItems.map(item =>
                     <ToggleButton
