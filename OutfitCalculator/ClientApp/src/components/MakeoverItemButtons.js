@@ -48,20 +48,20 @@ const MakeoverItemButtons = (makeoverItems) => {
     const bracelet = 10;
     const perfume = 11;
 
-    var makeoverItemTypes = {
-        0: "Hostess",
-        1: "Dress",
-        2: "Hairstyle",
-        3: "Hair Accessory",
-        4: "Eyeglasses",
-        5: "Earrings",
-        6: "Necklace",
-        7: "Nails",
-        8: "Ring",
-        9: "Watch",
-        10: "Bracelet",
-        11: "Perfume"
-    }
+    var makeoverItemTypes = [
+        "Hostess",
+        "Dress",
+        "Hairstyle",
+        "Hair Accessory",
+        "Eyeglasses",
+        "Earrings",
+        "Necklace",
+        "Nails",
+        "Ring",
+        "Watch",
+        "Bracelet",
+        "Perfume"
+    ]
 
     const setItem = (value) => {
         var makeoverItem = JSON.parse(value);
@@ -85,24 +85,22 @@ const MakeoverItemButtons = (makeoverItems) => {
     const getItem = (slot) => {
         var item;
         switch (slot) {
-            case hostess: item = hostessValue; break;
-            case dress: item = dressValue; break;
-            case hairstyle: item = hairstyleValue; break;
-            case hairAccessory: item = hairAccessoryValue; break;
-            case eyeglasses: item = eyeglassesValue; break;
-            case earrings: item = earringsValue; break;
-            case necklace: item = necklaceValue; break;
-            case nails: item = nailsValue; break;
-            case ring: item = ringValue; break;
-            case watch: item = watchValue; break;
-            case bracelet: item = braceletValue; break;
-            case perfume: item = perfumeValue; break;
+            case makeoverItemTypes[hostess]: item = hostessValue; break;
+            case makeoverItemTypes[dress]: item = dressValue; break;
+            case makeoverItemTypes[hairstyle]: item = hairstyleValue; break;
+            case makeoverItemTypes[hairAccessory]: item = hairAccessoryValue; break;
+            case makeoverItemTypes[eyeglasses]: item = eyeglassesValue; break;
+            case makeoverItemTypes[earrings]: item = earringsValue; break;
+            case makeoverItemTypes[necklace]: item = necklaceValue; break;
+            case makeoverItemTypes[nails]: item = nailsValue; break;
+            case makeoverItemTypes[ring]: item = ringValue; break;
+            case makeoverItemTypes[watch]: item = watchValue; break;
+            case makeoverItemTypes[bracelet]: item = braceletValue; break;
+            case makeoverItemTypes[perfume]: item = perfumeValue; break;
             default: break;
         }
         return item;
     }
-
-    const buttons = [];
 
     function getSelectedItems() {
         return [
@@ -135,14 +133,12 @@ const MakeoverItemButtons = (makeoverItems) => {
                 counter++;
             }
         }
-        //const response =
         await fetch(`https://localhost:44330/outfit?${idList}&getBest=false`)
             .then((response) => response.json())
             .then(data => {
                 setStatsValue(data.stats);
                 return data;
             });
-        //return response.stats;
     }
 
     async function getBestOutfit() {
@@ -191,47 +187,46 @@ const MakeoverItemButtons = (makeoverItems) => {
         setPerfumeValue(1);
     }
 
-    //Display
-    buttons.push(
-        <StatDisplay
-            stats={statsValue}
-        />
-    );
-    //Buttons
-    for (var i = 0; i < 12; i++) {
-        var filteredItems = makeoverItems.makeoverItems.filter(item => {
-            return item.slot === i
-        });
-        buttons.push(<h2>{makeoverItemTypes[i]}</h2>);
-        buttons.push(
-            <ToggleButtonGroup
-                key={i}
-                type='radio'
-                name={'radio' + i}
-                value={getItem(i)}
-                onChange={setItem}
-                style={{flexWrap: "wrap"}}
-            >
-                {filteredItems.map(item =>
-                    <ToggleButton
-                        key={item.name}
-                        value={JSON.stringify(item)}
-                        variant='secondary'
-                    >
-                        {item.name}
-                    </ToggleButton>
-                )
-                }
-            </ToggleButtonGroup>
-        );
-    }
-    buttons.push(
+    return (
         <div>
-            <Button onClick={getBestOutfit}>Calculate Best Outfit</Button>
-            <Button onClick={reset}>Reset</Button>
+            <StatDisplay
+                stats={statsValue}
+            />
+            {
+                makeoverItemTypes.map((type) => {
+                    var filteredItems = makeoverItems.makeoverItems.filter(mItem => {
+                        return makeoverItemTypes[mItem.slot] === type;
+                    })
+                    return (
+                        <div key={type}>
+                            <h2>{type}</h2>
+                            <ToggleButtonGroup
+                                type='radio'
+                                name={'radio' + type}
+                                value={getItem(type)}
+                                onChange={setItem}
+                                style={{ flexWrap: "wrap" }}
+                            >
+                                {filteredItems.map(fItem =>
+                                    <ToggleButton
+                                        key={fItem.name}
+                                        value={JSON.stringify(fItem)}
+                                        variant='secondary'
+                                    >
+                                        {fItem.name}
+                                    </ToggleButton>
+                                )
+                                }
+                            </ToggleButtonGroup>
+                        </div>
+                    );
+                })
+            }
+            <div>
+                <Button onClick={getBestOutfit}>Calculate Best Outfit</Button>
+                <Button onClick={reset}>Reset</Button>
+            </div>
         </div>
-    );
-    return buttons;
+    )
 }
-
 export default MakeoverItemButtons;
