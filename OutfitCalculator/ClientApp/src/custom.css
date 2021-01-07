@@ -1,37 +1,62 @@
-/* Provide sufficient contrast against white background */
-/*a {
-  color: #0366d6;
+body {
+    background-color: SaddleBrown;
+    color: White;
 }
 
-code {
-  color: #E01A76;
+.cross, .triangle, .circle, .double-circle {
+    color: transparent;
 }
-*/
+
+.cross {
+    text-shadow: 0 0 0 DeepSkyBlue, 0 0 3px white;
+}
+.triangle {
+    text-shadow: 0 0 0 Aquamarine, 0 0 3px white;
+}
+.circle {
+    text-shadow: 0 0 0 LightSalmon, 0 0 3px white;
+}
+.double-circle {
+    text-shadow: 0 0 0 Violet, 0 0 3px white;
+}
+
+.table-dark {
+    border-color: Gold;
+    box-shadow: 0 0 8px Gold;
+    background-color: Maroon;
+}
+
+    .table-dark thead th, .table-dark tbody td {
+        border-color: LightGray;
+    }
 
 .btn-primary {
     color: white;
     background-color: Purple;
-    border: 3px outset darkgoldenrod;
+    border: 2px solid DarkGoldenRod;
 }
 
     .btn-secondary:not(:disabled):not(.disabled):active, .btn-secondary:not(:disabled):not(.disabled).active, .show > .btn-secondary.dropdown-toggle,
     .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
         color: Pink;
         background-color: MediumPurple;
-        border: 3px outset Gold;
+        border: 2px solid Gold;
+        box-shadow: 0 0 6px White;
+        text-shadow: 0 0 3px DeepPink;
     }
 
 .btn-secondary {
     color: white;
-    background-color: MediumVioletRed;
-    border: 3px outset darkgoldenrod;
+    background-color: Maroon;
+    border: 2px solid GoldenRod;
 }
 
     .btn-secondary:not(:disabled):not(.disabled):active, .btn-secondary:not(:disabled):not(.disabled).active, .show > .btn-secondary.dropdown-toggle,
     .btn-secondary:hover, .btn-secondary:focus, .btn-secondary:active, .btn-secondary.active, .open > .dropdown-toggle.btn-secondary {
         color: Cyan;
-        background-color: MediumOrchid;
-        border: 3px outset Gold;
+        background-color: MediumVioletRed;
+        border: 2px solid Gold;
+        box-shadow: 0 0 6px White;
     }
 
 

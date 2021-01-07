@@ -11,13 +11,13 @@ const statToEmoji = (stat) => {
     }
 }
 
-const statToColor = (stat) => {
+const statToClass = (stat) => {
     switch (stat) {
-        case 0: return "blue";
-        case 1: return "green";
-        case 2: return "orange";
-        case 3: return "deeppink";
-        default: return "black";
+        case 0: return "cross";
+        case 1: return "triangle";
+        case 2: return "circle";
+        case 3: return "double-circle";
+        default: return "";
     }
 }
 
@@ -30,28 +30,24 @@ const StatDisplay = (stats) => {
     const beautyEmoji = statToEmoji(beauty);
     const cuteEmoji = statToEmoji(cute);
     const funnyEmoji = statToEmoji(funny);
-    const sexyColor = statToColor(sexy);
-    const beautyColor = statToColor(beauty);
-    const cuteColor = statToColor(cute);
-    const funnyColor = statToColor(funny);
+    const sexyStatClass = statToClass(sexy);
+    const beautyStatClass = statToClass(beauty);
+    const cuteStatClass = statToClass(cute);
+    const funnyStatClass = statToClass(funny);
     return (
-        <Table responsive>
+        <Table bordered responsive variant="dark">
+            <thead>
+                <th>Sexy</th>
+                <th>Beauty</th>
+                <th>Cute</th>
+                <th>Funny</th>
+            </thead>
             <tbody>
                 <tr>
-                    <th>Sexy</th>
-                    <td><div style={{ color: 'transparent', textShadow: '0 0 0 ' + sexyColor }}>{sexyEmoji}</div></td>
-                </tr>
-                <tr>
-                    <th>Beauty</th>
-                    <td><div style={{ color: 'transparent', textShadow: '0 0 0 ' + beautyColor }}>{beautyEmoji}</div></td>
-                </tr>
-                <tr>
-                    <th>Cute</th>
-                    <td><div style={{ color: 'transparent', textShadow: '0 0 0 ' + cuteColor }}>{cuteEmoji}</div></td>
-                </tr>
-                <tr>
-                    <th>Funny</th>
-                    <td><div style={{ color: 'transparent', textShadow: '0 0 0 ' + funnyColor }}>{funnyEmoji}</div></td>
+                    <td><div class={sexyStatClass}>{sexyEmoji}</div></td>
+                    <td><div class={beautyStatClass}>{beautyEmoji}</div></td>
+                    <td><div class={cuteStatClass}>{cuteEmoji}</div></td>
+                    <td><div class={funnyStatClass}>{funnyEmoji}</div></td>
                 </tr>
             </tbody>
         </Table>
