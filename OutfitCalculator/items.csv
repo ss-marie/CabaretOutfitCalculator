@@ -1,78 +1,89 @@
 Id,Name,Slot,UnlockRank,Sexy,Beauty,Cute,Funny
-1,Yuki,0,4,0,2,2,1
-2,Ai,0,4,1,1,2,2
-3,Saki,0,4,1,2,1,2
-4,Standard,1,4,0,0,0,0
-5,One Shoulder,1,4,1,0,-1,0
-6,Sexy Dress,1,4,1,0,0,-1
-7,Mini Skirt Dress,1,4,0,-1,1,0
-8,Lovely One Piece,1,4,-1,0,1,0
-9,Belted Bare Top,1,4,0,1,-1,0
-10,Long Halter,1,4,0,1,0,-1
-11,Chinese Dress,1,2,-1,0,0,1
-12,Shoulder Pad Suit,1,4,0,1,-1,1
-13,Bodycon,1,4,1,-1,-1,1
-14,Bodycon Dress,1,4,1,1,-1,-1
-15,Cute Idol,1,4,-1,-1,1,1
-16,Saki’s Dress,1,4,0,1,-1,0
-17,Yuki’s Dress,1,4,0,0,1,-1
-18,Ai’s Dress,1,4,-1,-1,1,1
-19,Standard,2,4,0,0,0,0
-20,Curly Updo,2,4,0,1,0,-1
-21,Hostess,2,4,1,1,-1,0
-22,Short,2,4,0,0,1,-1
-23,Medium,2,4,0,1,0,-1
-24,Twin Pony Tails,2,4,-1,-1,1,1
-25,Pony Tail,2,4,-1,0,1,0
-26,Straight Long,2,4,0,1,-1,0
-27,Princess Curls,2,4,1,0,-1,0
-28,Braided,2,3,-1,-1,1,1
-29,Idol Cut,2,3,-1,-1,1,1
-30,Trendy Long,2,3,1,1,-1,-1
-31,Double Buns,2,3,-1,-1,1,1
-32,None,3,4,0,0,0,0
-33,Tiara,3,4,-1,1,0,0
-34,Headband,3,4,-1,0,1,0
-35,Bunny Girl,3,4,1,-1,-1,1
-36,None,4,4,0,0,0,0
-37,Frame Glasses,4,4,0,0,0,0
-38,Frameless Glasses,4,4,0,0,0,0
-39,Imported Sunglasses,4,4,1,0,-1,1
-40,Round Glasses,4,4,-1,-1,0,1
-41,None,5,4,0,0,0,0
-42,Circle,5,4,0,0,1,-1
-43,Gaudy Rings,5,4,1,0,-1,0
-44,Heart,5,4,-1,0,1,0
-45,Cross,5,4,0,1,-1,0
-46,Pearl,5,4,0,1,0,-1
-47,Active Heart,5,4,-1,0,1,0
-48,Star,5,4,-1,0,0,1
-49,Red Apple,5,4,-1,-1,1,1
-50,None,6,4,0,0,0,0
-51,Elegant,6,4,0,1,-1,0
-52,Chain,6,4,1,0,-1,0
-53,Triple Necklace,6,4,1,0,0,-1
-54,Brilliant,6,4,0,-1,1,0
-55,Pearl,6,4,0,1,0,-1
-56,Onyx,6,4,0,1,-1,0
-57,None,7,4,0,0,0,0
-58,Red,7,4,1,0,-1,0
-59,Pink,7,4,0,-1,1,0
-60,Black,7,4,0,1,-1,0
-61,Rainbow,7,4,0,-1,0,1
-62,None,8,4,0,0,0,0
-63,Heart Ring,8,4,0,1,0,-1
-64,Cool Ring,8,4,1,0,-1,0
-65,Flower Ring,8,4,-1,0,1,0
-66,None,9,4,0,0,0,0
-67,Gorgeous Watch,9,4,1,0,-1,0
-68,Designer Watch,9,4,0,1,-1,0
-69,Simple Watch,9,4,-1,0,1,0
-70,Pop Watch,9,3,-1,-1,1,1
-71,None,10,4,0,0,0,0
-72,Onyx Bracelet,10,4,0,1,-1,0
-73,Gold Bracelet,10,4,1,0,0,-1
-74,Pearl Bracelet,10,4,-1,0,1,0
-75,Flower Bracelet,10,4,0,-1,1,0
-76,None,11,4,0,0,0,0
-77,FITS,11,4,0,0,0,0
+1,Yuki,0,6,0,2,2,1
+2,Ai,0,7,1,1,2,2
+3,Hibiki,0,9,3,2,1,0
+4,Saki,0,8,1,2,1,2
+5,Chika,0,10,0,0,0,0
+6,Mana,0,11,0,0,0,0
+7,Standard,1,0,0,0,0,0
+8,One Shoulder,1,0,1,0,-1,0
+9,Sexy Dress,1,0,1,0,0,-1
+10,Mini Skirt Dress,1,0,0,-1,1,0
+11,Lovely One Piece,1,0,-1,0,1,0
+12,Long Halter,1,0,0,1,0,-1
+13,Chinese Dress,1,1,-1,0,0,1
+14,Shoulder Pad Suit,1,1,0,1,-1,1
+15,Belted Bare Top,1,0,0,1,-1,0
+16,Bodycon,1,2,1,-1,-1,1
+17,Bodycon Dress,1,3,1,1,-1,-1
+18,Cute Idol,1,3,-1,-1,1,1
+19,Delinquent,1,4,-1,1,-2,2
+20,Ai’s Dress,1,7,-1,-1,1,1
+21,Chika’s Dress,1,10,1,1,-2,0
+22,Hibiki’s Dress,1,9,-1,-1,1,1
+23,Mana’s Dress,1,11,-1,-1,1,1
+24,Saki’s Dress,1,8,0,1,-1,0
+25,Yuki’s Dress,1,6,0,0,1,-1
+26,Standard,2,0,0,0,0,0
+27,Curly Updo,2,0,0,1,0,-1
+28,Hostess,2,0,1,1,-1,0
+29,Short,2,0,0,0,1,-1
+30,Medium,2,0,0,1,0,-1
+31,Twin Pony Tails,2,0,-1,-1,1,1
+32,Pony Tail,2,0,-1,0,1,0
+33,Straight Long,2,0,0,1,-1,0
+34,Princess Curls,2,0,1,0,-1,0
+35,Braided,2,1,-1,-1,1,1
+36,Idol Cut,2,3,-1,-1,1,1
+37,Trendy Long,2,2,1,1,-1,-1
+38,Double Buns,2,3,-1,-1,1,1
+39,None,3,0,0,0,0,0
+40,Tiara,3,0,-1,1,0,0
+41,Headband,3,0,-1,0,1,0
+42,Bunny Girl,3,2,1,-1,-1,1
+43,Avant-Garde Hat,3,5,-1,1,0,3
+44,None,4,0,0,0,0,0
+45,Frame Glasses,4,0,0,0,0,0
+46,Frameless Glasses,4,0,0,0,0,0
+47,Imported Sunglasses,4,0,1,0,-1,1
+48,Round Glasses,4,2,-1,-1,0,1
+49,None,5,0,0,0,0,0
+50,Circle,5,0,0,0,1,-1
+51,Gaudy Rings,5,0,1,0,-1,0
+52,Heart,5,0,-1,0,1,0
+53,Cross,5,0,0,1,-1,0
+54,Pearl,5,0,0,1,0,-1
+55,Active Heart,5,0,-1,0,1,0
+56,Star,5,1,-1,0,0,1
+57,Red Apple,5,3,-1,-1,1,1
+58,None,6,0,0,0,0,0
+59,Elegant,6,0,0,1,-1,0
+60,Chain,6,0,1,0,-1,0
+61,Triple Necklace,6,0,1,0,0,-1
+62,Brilliant,6,0,0,-1,1,0
+63,Pearl,6,0,0,1,0,-1
+64,Onyx,6,0,0,1,-1,0
+65,Triple Pearl,6,4,1,1,-1,-1
+66,Royal Necklace,6,5,-1,0,-1,3
+67,None,7,0,0,0,0,0
+68,Red,7,0,1,0,-1,0
+69,Pink,7,0,0,-1,1,0
+70,Black,7,0,0,1,-1,0
+71,Rainbow,7,0,0,-1,0,1
+72,None,8,0,0,0,0,0
+73,Heart Ring,8,0,0,1,0,-1
+74,Cool Ring,8,0,1,0,-1,0
+75,Flower Ring,8,1,-1,0,1,0
+76,100ct Diamond Ring,8,5,-1,1,-2,3
+77,None,9,0,0,0,0,0
+78,Gorgeous Watch,9,0,1,0,-1,0
+79,Designer Watch,9,0,0,1,-1,0
+80,Simple Watch,9,0,-1,0,1,0
+81,Pop Watch,9,3,-1,-1,1,1
+82,None,10,0,0,0,0,0
+83,Onyx Bracelet,10,0,0,1,-1,0
+84,Gold Bracelet,10,0,1,0,0,-1
+85,Pearl Bracelet,10,0,-1,0,1,0
+86,Flower Bracelet,10,3,0,-1,1,0
+87,None,11,0,0,0,0,0
+88,FITS,11,0,0,0,0,0

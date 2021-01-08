@@ -8,7 +8,6 @@
         B,
         A,
         S,
-        SS,
         YUKI,
         AI,
         SAKI,

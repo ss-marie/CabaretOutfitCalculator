@@ -24,14 +24,23 @@ namespace OutfitCalculator
             }
 
             // Remove items that the user has not unlocked via rank
-            allItems.RemoveAll(i => i.UnlockRank > rank && i.UnlockRank < UnlockRank.YUKI);
+            allItems.RemoveAll(i => 
+            i.UnlockRank > rank && 
+            i.UnlockRank < UnlockRank.YUKI
+            );
 
             // Remove items that the user has not unlocked via takeovers
-            allItems.RemoveAll(i => i.UnlockRank >= UnlockRank.YUKI && !unlocks.Contains(i.UnlockRank));
+            allItems.RemoveAll(i => 
+            i.UnlockRank >= UnlockRank.YUKI && 
+            !unlocks.Contains(i.UnlockRank)
+            );
 
             // Remove incompatible dresses (Yuki can't wear Yuki's Dress etc)
             string hostessName = allItems.Where(i => i.Id == hostessId).FirstOrDefault()?.Name;
-            allItems.RemoveAll(i => hostessName?.ToUpper() == i.UnlockRank.ToString());
+            allItems.RemoveAll(i => 
+            hostessName?.ToUpper() == i.UnlockRank.ToString() &&
+            i.Slot != Slot.HOSTESS
+            );
 
             return allItems;
         }

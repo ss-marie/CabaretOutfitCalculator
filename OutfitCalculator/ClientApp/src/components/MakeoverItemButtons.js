@@ -27,7 +27,6 @@ const MakeoverItemButtons = () => {
         populateData();
 
         async function getStats() {
-            console.log(outfitValue);
             var idList = "";
             for (var i = 0; i < outfitValue.length; i++) {
                 var item = outfitValue[i];
@@ -35,7 +34,6 @@ const MakeoverItemButtons = () => {
                     idList += ("&itemId=" + item.id);
                 }
             }
-            console.log(idList);
             var unlockList = "";
             for (var j = 0; j < unlockValue.length; j++) {
                 var unlock = unlockValue[j];
