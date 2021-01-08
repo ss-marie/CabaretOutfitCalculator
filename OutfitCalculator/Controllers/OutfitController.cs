@@ -23,11 +23,15 @@ namespace OutfitCalculator.Controllers
         public Outfit GetBestOutfit(
             [FromQuery(Name = "itemId")]
             int[] itemIds,
-            [FromQuery(Name = "getBest")]
-            bool getBest = false
+            [FromQuery]
+            bool getBest = false,
+            [FromQuery]
+            UnlockRank rank = UnlockRank.E,
+            [FromQuery(Name = "unlock")]
+            UnlockRank[] unlocks = default
             )
         {
-            List<MakeoverItem> allItems = MakeoverItem.GetAllItems();
+            List<MakeoverItem> allItems = MakeoverItem.GetAllItems(rank, unlocks, itemIds.Length > 0 ? itemIds[0] : 0 );
             List<MakeoverItem> selectedItems = allItems.Where(item => itemIds.Contains(item.Id)).ToList();
             Outfit outfit = new Outfit();
             foreach (MakeoverItem item in selectedItems)
@@ -50,7 +54,7 @@ namespace OutfitCalculator.Controllers
             }
             if (getBest)
             {
-                return Calculator.CalculateBest(outfit);
+                return Calculator.CalculateBest(outfit, rank, unlocks);
             }
             else
             {

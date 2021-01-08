@@ -2,10 +2,18 @@
 {
     public enum UnlockRank
     {
-        A,
-        B,
-        C,
+        E,
         D,
-        E
+        C,
+        B,
+        A,
+        S,
+        SS,
+        YUKI,
+        AI,
+        SAKI,
+        HIBIKI,
+        CHIKA,
+        MANA
     }
 }

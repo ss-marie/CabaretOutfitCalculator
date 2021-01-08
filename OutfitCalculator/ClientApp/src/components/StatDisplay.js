@@ -22,10 +22,10 @@ const statToClass = (stat) => {
 }
 
 const StatDisplay = (stats) => {
-    const sexy = stats.stats.sexy ?? 0;
-    const beauty = stats.stats.beauty ?? 0;
-    const cute = stats.stats.cute ?? 0;
-    const funny = stats.stats.funny ?? 0;
+    const sexy = stats?.stats?.sexy ?? 0;
+    const beauty = stats?.stats?.beauty ?? 0;
+    const cute = stats?.stats?.cute ?? 0;
+    const funny = stats?.stats?.funny ?? 0;
     const sexyEmoji = statToEmoji(sexy);
     const beautyEmoji = statToEmoji(beauty);
     const cuteEmoji = statToEmoji(cute);

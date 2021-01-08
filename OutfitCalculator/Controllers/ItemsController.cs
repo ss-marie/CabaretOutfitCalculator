@@ -11,9 +11,16 @@ namespace OutfitCalculator.Controllers
     public class ItemsController : ControllerBase
     {
         [HttpGet]
-        public IEnumerable<MakeoverItem> GetItems()
+        public IEnumerable<MakeoverItem> GetItems(
+            [FromQuery]
+            UnlockRank rank = UnlockRank.E,
+            [FromQuery(Name = "unlock")]
+            UnlockRank[] unlocks = default,
+            [FromQuery]
+            int hostessId = 0
+            )
         {
-            return MakeoverItem.GetAllItems()
+            return MakeoverItem.GetAllItems(rank, unlocks, hostessId)
             .ToArray();
         }
     }
