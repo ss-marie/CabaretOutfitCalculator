@@ -9,7 +9,6 @@ const MakeoverItemButtons = () => {
     const [rankValue, setRankValue] = useState('E');
     const [unlockValue, setUnlockValue] = useState(['Yuki']);
 
-
     useEffect(() => {
         async function populateData() {
             var unlockList = "";
@@ -18,7 +17,7 @@ const MakeoverItemButtons = () => {
                 unlockList += ("&unlock=" + unlock);
             }
             var hostessId = "";
-            if (outfitValue.length > 0) {
+            if (outfitValue.length > 0 && outfitValue[0] && outfitValue[0].id) {
                 hostessId = "&hostessId=" + outfitValue[0].id;
             }
             const response = await fetch(`items?rank=${rankValue}${unlockList}${hostessId}`);
@@ -26,21 +25,17 @@ const MakeoverItemButtons = () => {
             setmakeoverItems(data);
         }
         populateData();
-    }, [
-        rankValue,
-        unlockValue,
-        outfitValue
-    ])
 
-    useEffect(() => {
         async function getStats() {
+            console.log(outfitValue);
             var idList = "";
             for (var i = 0; i < outfitValue.length; i++) {
                 var item = outfitValue[i];
-                if (item.id) {
+                if (item && item.id) {
                     idList += ("&itemId=" + item.id);
                 }
             }
+            console.log(idList);
             var unlockList = "";
             for (var j = 0; j < unlockValue.length; j++) {
                 var unlock = unlockValue[j];
@@ -109,7 +104,7 @@ const MakeoverItemButtons = () => {
         var idList = "";
         for (var i = 0; i < outfitValue.length; i++) {
             var item = outfitValue[i];
-            if (item.id) {
+            if (item && item.id) {
                 idList += ("&itemId=" + item.id);
             }
         }
@@ -122,18 +117,18 @@ const MakeoverItemButtons = () => {
         const outfit = await response.json();
 
         setOutfitValue([
-            JSON.stringify(outfit.hostess),
-            JSON.stringify(outfit.dress),
-            JSON.stringify(outfit.hairstyle),
-            JSON.stringify(outfit.hairAccessory),
-            JSON.stringify(outfit.eyeglasses),
-            JSON.stringify(outfit.earrings),
-            JSON.stringify(outfit.necklace),
-            JSON.stringify(outfit.nails),
-            JSON.stringify(outfit.ring),
-            JSON.stringify(outfit.watch),
-            JSON.stringify(outfit.bracelet),
-            JSON.stringify(outfit.perfume)
+            outfit.hostess,
+            outfit.dress,
+            outfit.hairstyle,
+            outfit.hairAccessory,
+            outfit.eyeglasses,
+            outfit.earrings,
+            outfit.necklace,
+            outfit.nails,
+            outfit.ring,
+            outfit.watch,
+            outfit.bracelet,
+            outfit.perfume
         ]);
     }
 
