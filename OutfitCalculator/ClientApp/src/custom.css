@@ -3,36 +3,25 @@ body {
     color: White;
 }
 
-.cross, .triangle, .circle, .double-circle {
-    color: transparent;
-    font-size: 26px;
-}
-
-.cross {
-    text-shadow: 0 0 0 DeepSkyBlue, 0 0 3px white;
-}
-
-.triangle {
-    text-shadow: 0 0 0 Aquamarine, 0 0 3px white;
-}
-
-.circle {
-    text-shadow: 0 0 0 LightSalmon, 0 0 3px white;
-}
-
-.double-circle {
-    text-shadow: 0 0 0 Violet, 0 0 3px white;
-}
-
-.table-dark {
+.main-stats {
     border-color: Gold;
     box-shadow: 0 0 8px Gold;
     background-color: Maroon;
 }
 
-    .table-dark thead td, .table-dark tbody td {
+    .main-stats td, .main-stats td {
         border-color: LightGray;
     }
+
+
+.item-stats, .item-stats tr, .item-stats td {
+    border: none;
+    color: white;
+    text-align: center;
+    vertical-align: middle;
+    padding: 0.2rem;
+    margin: 0;
+}
 
 .btn-primary {
     color: white;
@@ -62,3 +51,42 @@ body {
         border: 2px solid Gold;
         box-shadow: 0 0 6px White;
     }
+
+.cross, .triangle, .circle, .double-circle {
+    color: transparent;
+    font-size: 26px;
+}
+
+.stat, .mod-up, .mod-down {
+    display: inline-block;
+}
+
+td.mod-up, td.mod-down {
+    color: gold;
+    text-shadow: 0 0 3px white;
+    font-size: 26px;
+}
+
+.mod-up {
+    transform: rotate(-90deg);
+}
+
+.mod-down {
+    transform: rotate(90deg);
+}
+
+.cross {
+    text-shadow: 0 0 0 DeepSkyBlue, 0 0 3px white;
+}
+
+.triangle {
+    text-shadow: 0 0 0 Aquamarine, 0 0 3px white;
+}
+
+.circle {
+    text-shadow: 0 0 0 LightSalmon, 0 0 3px white;
+}
+
+.double-circle {
+    text-shadow: 0 0 0 Violet, 0 0 3px white;
+}

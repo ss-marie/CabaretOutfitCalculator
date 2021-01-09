@@ -21,39 +21,77 @@ const statToClass = (stat) => {
     }
 }
 
+const modToClass = (stat) => {
+    var mod = 0;
+    if (stat > 0) mod = 1;
+    if (stat < 0) mod = -1;
+    switch (mod) {
+        case -1: return "mod-up";
+        case 1: return "mod-down";
+        default: return "";
+    }
+}
+
 const StatDisplay = (stats) => {
     const sexy = stats?.stats?.sexy ?? 0;
     const beauty = stats?.stats?.beauty ?? 0;
     const cute = stats?.stats?.cute ?? 0;
     const funny = stats?.stats?.funny ?? 0;
-    const sexyEmoji = statToEmoji(sexy);
-    const beautyEmoji = statToEmoji(beauty);
-    const cuteEmoji = statToEmoji(cute);
-    const funnyEmoji = statToEmoji(funny);
-    const sexyStatClass = statToClass(sexy);
-    const beautyStatClass = statToClass(beauty);
-    const cuteStatClass = statToClass(cute);
-    const funnyStatClass = statToClass(funny);
-    return (
-        <Table bordered responsive variant="dark">
-            <thead>
-                <tr>
-                    <td>Sexy</td>
-                    <td>Beauty</td>
-                    <td>Cute</td>
-                    <td>Funny</td>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><span className={sexyStatClass}>{sexyEmoji}</span></td>
-                    <td><span className={beautyStatClass}>{beautyEmoji}</span></td>
-                    <td><span className={cuteStatClass}>{cuteEmoji}</span></td>
-                    <td><span className={funnyStatClass}>{funnyEmoji}</span></td>
-                </tr>
-            </tbody>
-        </Table>
-    );
+    if (stats.isMain) {
+        return (
+            <Table className="main-stats" bordered responsive variant="dark">
+                <thead>
+                    <tr>
+                        <td><h5>Sexy</h5></td>
+                        <td><h5>Beauty</h5></td>
+                        <td><h5>Cute</h5></td>
+                        <td><h5>Funny</h5></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span className={statToClass(sexy)}>{statToEmoji(sexy)}</span></td>
+                        <td><span className={statToClass(beauty)}>{statToEmoji(beauty)}</span></td>
+                        <td><span className={statToClass(cute)}>{statToEmoji(cute)}</span></td>
+                        <td><span className={statToClass(funny)}>{statToEmoji(funny)}</span></td>
+                    </tr>
+                </tbody>
+            </Table>
+        );
+    } else {
+        return (
+            <Table className="item-stats">
+                <tbody>
+                    <tr>
+                        {sexy !== 0 &&
+                            <td>S</td>
+                        }
+                        {sexy !== 0 &&
+                            <td className={modToClass(sexy)}>{String.fromCodePoint('0xBB')}</td>
+                        }
+                        {beauty !== 0 &&
+                            <td>B</td>
+                        }
+                        {beauty !== 0 &&
+                            <td className={modToClass(beauty)}>{String.fromCodePoint('0xBB')}</td>
+                        }
+                        {cute !== 0 &&
+                            <td>C</td>
+                        }
+                        {cute !== 0 &&
+                            <td className={modToClass(cute)}>{String.fromCodePoint('0xBB')}</td>
+                        }
+                        {funny !== 0 &&
+                            <td>F</td>
+                        }
+                        {funny !== 0 &&
+                            <td className={modToClass(funny)}>{String.fromCodePoint('0xBB')}</td>
+                        }
+                    </tr>
+                </tbody>
+            </Table>
+        );
+    };
 }
 
 export default StatDisplay;

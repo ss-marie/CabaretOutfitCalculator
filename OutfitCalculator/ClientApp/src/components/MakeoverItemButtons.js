@@ -141,6 +141,7 @@ const MakeoverItemButtons = () => {
             {/*STAT DISPLAY*/}
             <StatDisplay
                 stats={statsValue}
+                isMain={true}
             />
             {/*RANK BUTTONS*/}
             <h2>Current Rank</h2>
@@ -157,7 +158,7 @@ const MakeoverItemButtons = () => {
                         value={rank}
                         variant='secondary'
                     >
-                        {rank}
+                        <h5>{rank}</h5>
                     </ToggleButton>
                 )}
             </ToggleButtonGroup>
@@ -176,7 +177,7 @@ const MakeoverItemButtons = () => {
                         value={unlock}
                         variant='secondary'
                     >
-                        {unlock}
+                        <h5>{unlock}</h5>
                     </ToggleButton>
                 )}
             </ToggleButtonGroup>
@@ -202,7 +203,11 @@ const MakeoverItemButtons = () => {
                                         value={JSON.stringify(fItem)}
                                         variant='secondary'
                                     >
-                                        {fItem.name}
+                                        <h5>{fItem.name}</h5>
+                                        <StatDisplay
+                                            stats={fItem.stats}
+                                            isMain={false}
+                                        />
                                     </ToggleButton>
                                 )
                                 }
