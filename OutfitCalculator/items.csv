@@ -12,21 +12,21 @@ Id,Name,Slot,UnlockRank,Sexy,Beauty,Cute,Funny
 11,Lovely One Piece,1,0,-1,0,1,0
 12,Long Halter,1,0,0,1,0,-1
 13,Chinese Dress,1,1,-1,0,0,1
-14,Shoulder Pad Suit,1,1,0,1,-1,1
+14,Shoulder Pad Suit,1,1,0,1,-2,1
 15,Belted Bare Top,1,0,0,1,-1,0
 16,Bodycon,1,2,1,-1,-1,1
 17,Bodycon Dress,1,3,1,1,-1,-1
-18,Cute Idol,1,3,-1,-1,1,1
+18,Cute Idol,1,3,-1,-2,2,1
 19,Delinquent,1,4,-1,1,-2,2
-20,Ai’s Dress,1,7,-1,-1,1,1
+20,Ai’s Dress,1,7,0,-1,1,0
 21,Chika’s Dress,1,10,1,1,-2,0
-22,Hibiki’s Dress,1,9,-1,-1,1,1
+22,Hibiki’s Dress,1,9,0,1,-1,0
 23,Mana’s Dress,1,11,-1,-1,1,1
 24,Saki’s Dress,1,8,0,1,-1,0
 25,Yuki’s Dress,1,6,0,0,1,-1
 26,Standard,2,0,0,0,0,0
 27,Curly Updo,2,0,0,1,0,-1
-28,Hostess,2,0,1,1,-1,0
+28,Hostess,2,0,1,1,-2,0
 29,Short,2,0,0,0,1,-1
 30,Medium,2,0,0,1,0,-1
 31,Twin Pony Tails,2,0,-1,-1,1,1
@@ -34,9 +34,9 @@ Id,Name,Slot,UnlockRank,Sexy,Beauty,Cute,Funny
 33,Straight Long,2,0,0,1,-1,0
 34,Princess Curls,2,0,1,0,-1,0
 35,Braided,2,1,-1,-1,1,1
-36,Idol Cut,2,3,-1,-1,1,1
+36,Idol Cut,2,3,-2,-1,2,1
 37,Trendy Long,2,2,1,1,-1,-1
-38,Double Buns,2,3,-1,-1,1,1
+38,Double Buns,2,3,-2,-1,1,2
 39,None,3,0,0,0,0,0
 40,Tiara,3,0,-1,1,0,0
 41,Headband,3,0,-1,0,1,0
@@ -45,8 +45,8 @@ Id,Name,Slot,UnlockRank,Sexy,Beauty,Cute,Funny
 44,None,4,0,0,0,0,0
 45,Frame Glasses,4,0,0,0,0,0
 46,Frameless Glasses,4,0,0,0,0,0
-47,Imported Sunglasses,4,0,1,0,-1,1
-48,Round Glasses,4,2,-1,-1,0,1
+47,Imported Sunglasses,4,0,1,0,-2,1
+48,Round Glasses,4,2,-1,-1,0,2
 49,None,5,0,0,0,0,0
 50,Circle,5,0,0,0,1,-1
 51,Gaudy Rings,5,0,1,0,-1,0

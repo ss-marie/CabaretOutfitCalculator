@@ -26,8 +26,8 @@ const modToClass = (stat) => {
     if (stat > 0) mod = 1;
     if (stat < 0) mod = -1;
     switch (mod) {
-        case -1: return "mod-up";
-        case 1: return "mod-down";
+        case -1: return "mod-down";
+        case 1: return "mod-up";
         default: return "";
     }
 }
